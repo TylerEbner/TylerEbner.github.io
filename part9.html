@@ -109,6 +109,19 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     
 }
+	game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+	game.input.onDown.add(gofull, this);
+	}
+	function gofull() {
+		if (game.sale.isFullScreen)
+		{
+	game.scale.stopFullScreen();
+		}
+		else
+		{
+	game.scale.startFullScreen(false)
+		}
+	}
 
 function update() {
 
@@ -158,7 +171,7 @@ function collectStar (player, star) {
     star.kill();
 
     //  Add and update the score
-    score += 10;
+    score += 100;
     scoreText.text = 'Score: ' + score;
 
 }
