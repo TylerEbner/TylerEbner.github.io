@@ -113,13 +113,13 @@ function create() {
 	game.input.onDown.add(gofull, this);
 	}
 	function gofull() {
-		if (game.sale.isFullScreen)
+		if (game.scale.isFullScreen)
 		{
 	game.scale.stopFullScreen();
 		}
 		else
 		{
-	game.scale.startFullScreen(false)
+	game.scale.startFullScreen(false);
 		}
 	}
 
