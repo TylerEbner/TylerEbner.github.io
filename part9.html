@@ -21,12 +21,12 @@ function preload() {
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
-    game.load.spritesheet('dude', 'https://mir-s3-cdn-cf.behance.net/project_modules/disp/ed275720093679.562e563a83084.png', 42, 58);
-game.load.audio('bakcground_music', 'assets/battleThemeA.mp3');
+    game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
+game.load.audio('background_music', 'assets/battleThemeA.mp3');
 	
 backgroundMusic = game.add.audio('background_music');
-	backgroundMusic.loop = true; // This is what you are looking for
-	backgroundMusic.play();
+backgroundMusic.loop = true; // This is what you are looking for
+backgroundMusic.play();
 
 }
 
