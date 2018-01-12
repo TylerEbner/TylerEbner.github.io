@@ -23,10 +23,12 @@ function preload() {
     game.load.image('star', 'assets/star.png');
     game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
 game.load.audio('background_music', 'assets/SoundHelix-Song-1.mp3');
+	game.load.audio('collection_sound', 'assets/SoundHelix-Song-1.mp3');
 	
 backgroundMusic = game.add.audio('background_music');
 backgroundMusic.loop = true; // This is what you are looking for
 backgroundMusic.play();
+sound = game.add.audio('collection_sound');
 
 }
 
@@ -109,19 +111,20 @@ function create() {
     cursors = game.input.keyboard.createCursorKeys();
     
 }
-	game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
-	game.input.onDown.add(gofull, this);
-	}
-	function gofull() {
-		if (game.scale.isFullScreen)
+	// Stretch to fill
+	//game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+	//game.input.onDown.add(gofull, this);
+	//}
+	//function gofull() {
+	//	if (game.scale.isFullScreen)
 		{
-	game.scale.stopFullScreen();
-		}
-		else
-		{
-	game.scale.startFullScreen(false);
-		}
-	}
+	//game.scale.stopFullScreen();
+	//	}
+	//	else
+	//	{
+	//game.scale.startFullScreen(false);
+	//	}
+	//}
 
 function update() {
 
@@ -173,6 +176,7 @@ function collectStar (player, star) {
     //  Add and update the score
     score += 100;
     scoreText.text = 'Score: ' + score;
+	sound.play()
 
 }
 
