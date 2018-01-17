@@ -64,10 +64,10 @@ function create() {
     ground.body.immovable = true;
 
     //  Now let's create two ledges
-    var ledge = platforms.create(400, 400, 'ground');
+    var ledge = platforms.create(400, 650, 'ground');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(-150, 250, 'ground');
+    ledge = platforms.create(-150, 400, 'ground');
     ledge.body.immovable = true;
 
     // The player and its settings
@@ -77,8 +77,8 @@ function create() {
     game.physics.arcade.enable(player);
 
     //  Player physics properties. Give the little guy a slight bounce.
-    player.body.bounce.y = 0.1;
-    player.body.gravity.y = 150;
+    player.body.bounce.y = 0.4;
+    player.body.gravity.y = 400;
     player.body.collideWorldBounds = true;
 
     //  Our two animations, walking left and right.
@@ -101,7 +101,7 @@ function create() {
         star.body.gravity.y = 300;
 
         //  This just gives each star a slightly random bounce value
-        star.body.bounce.y = 0.7 + Math.random() * 0.2;
+        star.body.bounce.y = 0.9 + Math.random() * 0.2;
     }
 
     //  The score
