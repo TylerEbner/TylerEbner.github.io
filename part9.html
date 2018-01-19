@@ -21,7 +21,7 @@ function preload() {
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
-    game.load.spritesheet('dude', 'assets/http://i0.kym-cdn.com/entries/icons/original/000/024/171/Screen_Shot_2017-10-20_at_2.10.41_PM.jpg', 100, 100);
+    game.load.spritesheet('dude', 'assets/http://i0.kym-cdn.com/entries/icons/original/000/024/171/Screen_Shot_2017-10-20_at_2.10.41_PM.jpg', 32, 48);
     game.load.audio('background_music', 'assets/Level Up Sound Effect.mp3');
     game.load.audio('collection_sound', 'assets/');
 	
@@ -64,10 +64,10 @@ function create() {
     ground.body.immovable = true;
 
     //  Now let's create two ledges
-    var ledge = platforms.create(400, 650, 'ground');
+    var ledge = platforms.create(400, 400, 'ground');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(-150, 400, 'ground');
+    ledge = platforms.create(-150, 250, 'ground');
     ledge.body.immovable = true;
 
     // The player and its settings
@@ -77,8 +77,8 @@ function create() {
     game.physics.arcade.enable(player);
 
     //  Player physics properties. Give the little guy a slight bounce.
-    player.body.bounce.y = 0.4;
-    player.body.gravity.y = 400;
+    player.body.bounce.y = 0.2;
+    player.body.gravity.y = 300;
     player.body.collideWorldBounds = true;
 
     //  Our two animations, walking left and right.
@@ -92,7 +92,7 @@ function create() {
     stars.enableBody = true;
 
     //  Here we'll create 12 of them evenly spaced apart
-    for (var i = 0; i < 20; i++)
+    for (var i = 0; i < 12; i++)
     {
         //  Create a star inside of the 'stars' group
         var star = stars.create(i * 70, 0, 'star');
@@ -101,7 +101,7 @@ function create() {
         star.body.gravity.y = 300;
 
         //  This just gives each star a slightly random bounce value
-        star.body.bounce.y = 0.9 + Math.random() * 0.2;
+        star.body.bounce.y = 0.7 + Math.random() * 0.2;
     }
 
     //  The score
@@ -141,14 +141,14 @@ function update() {
     if (cursors.left.isDown)
     {
         //  Move to the left
-        player.body.velocity.x = -200;
+        player.body.velocity.x = -150;
 
         player.animations.play('left');
     }
     else if (cursors.right.isDown)
     {
         //  Move to the right
-        player.body.velocity.x = 200;
+        player.body.velocity.x = 150;
 
         player.animations.play('right');
     }
