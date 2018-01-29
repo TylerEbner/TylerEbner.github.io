@@ -21,7 +21,7 @@ function preload() {
     game.load.image('sky', 'assets/sky.png');
     game.load.image('ground', 'assets/platform.png');
     game.load.image('star', 'assets/star.png');
-    game.load.spritesheet('dude', 'assets/scottpilgrim_multiple.png', 108, 140);
+    game.load.spritesheet('dude', 'user4.png', 95, 158, 12);
     game.load.audio('background_music', 'assets/Level Up Sound Effect.mp3');
     game.load.audio('collection_sound', 'assets/');
 	
@@ -80,7 +80,9 @@ function create() {
     ledge.body.immovable = true;
 
     // The player and its settings
-    player = game.add.sprite(32, game.world.height - 500, 'dude');
+    player = myGame.add.sprite(500, 100, 'dude');
+    myGame.physics.arcade.enable(player);
+    player.animations.add('bottom', [0,1,2,3,4,5,6,7,8,9,10,11], 12, true, true);
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
@@ -147,22 +149,30 @@ function update() {
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
 
-    if (cursors.left.isDown)
-    {
-        //  Move to the left
-        player.body.velocity.x = -150;
-
-        player.animations.play('left');
-    }
-    else if (cursors.right.isDown)
-    {
-        //  Move to the right
-        player.body.velocity.x = 150;
-
-        player.animations.play('right');
-    }
-    else
-    {
+    if (cursors.left.isDown) {
+            //  Move to the left
+            player.body.velocity.x = -150;
+            player.animations.play('left');
+        }
+        else if (cursors.right.isDown)
+        {
+            //  Move to the right
+            player.body.velocity.x = 150;
+            player.animations.play('right');
+        }
+        else if (cursors.up.isDown)
+        {
+            //  Move to the right
+            player.body.velocity.y = -50;
+            player.animations.play('top');
+        }
+        else if (cursors.down.isDown)
+        {
+            //  Move to the right
+            player.body.velocity.y = 50;
+            player.animations.play('bottom');
+        }
+}
         //  Stand still
         player.animations.stop();
 
