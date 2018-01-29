@@ -165,7 +165,7 @@ function update() {
     
     //  Allow the player to jump if they are touching the ground.
     if (cursors.up.isDown)
-	    && player.body.touching.down)
+	    //&& player.body.touching.down)
     {
         player.body.velocity.y = -350;
     }
@@ -178,7 +178,7 @@ function collectStar (player, star) {
     star.kill();
 
     //  Add and update the score
-    score += 55.5;
+    score += 1.75;
     scoreText.text = 'Score: ' + score;
 	sound.play();
 
