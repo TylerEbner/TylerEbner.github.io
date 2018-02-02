@@ -68,6 +68,9 @@ function create() {
     //  Now let's create two ledges
     var ledge = platforms.create(0, 340, 'ground');
     ledge.body.immovable = true;
+	
+    var ledge2 = platforms2.create(0, 340, 'ground');
+    ledge.body.immovable = true;
 
     ledge = platforms.create(250, 340, 'ground');
     ledge.body.immovable = true;
@@ -81,7 +84,7 @@ function create() {
     ledge = platforms.create(0,0, 'ground');
     ledge.body.immovable = true;
 	
-    ledge = platforms2.create(150,100, 'ground');
+    ledge2 = platforms2.create(150,100, 'ground');
     ledge.body.immovable = true;
 
     // The player and its settings
