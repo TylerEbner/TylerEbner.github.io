@@ -41,6 +41,7 @@ var cursors;
 var stars;
 var score = 0;
 var scoreText;
+var f = t.font;f.fill = '#FF0000';t.setStyle(f);
 
 function create() {
 
@@ -202,8 +203,7 @@ function collectStar (player, star) {
 
     //  Add and update the score
     score += 1.75;
-    var f = t.font;f.fill = '#FF0000';t.setStyle(f);
-    scoreText.text.t. = 'Score: ' + score;
+    scoreText.text. = 'Score: ' + score + f;
 	sound.play();
 
 }
