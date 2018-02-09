@@ -69,30 +69,30 @@ function create() {
     ground.body.immovable = true;
 
     //  Now let's create two ledges
-//    var ledge = platforms.create(0, 340, 'ground');
-  //  ledge.body.immovable = true;
+    var ledge = platforms.create(0, 340, 'ground');
+    ledge.body.immovable = true;
 	
-//    var ledge2 = platforms2.create(0, 340, 'ground');
-  //  ledge.body.immovable = true;
+    var ledge2 = platforms2.create(0, 340, 'ground');
+    ledge.body.immovable = true;
 
-//    ledge = platforms.create(250, 340, 'ground');
-//    ledge.body.immovable = true;
+    ledge = platforms.create(250, 340, 'ground');
+    ledge.body.immovable = true;
 	
-//    ledge = platforms.create(0,600, 'ground');
-//    ledge.body.immovable = true;
+    ledge = platforms.create(0,600, 'ground');
+    ledge.body.immovable = true;
 	
-//    ledge = platforms.create(300,600, 'ground');
-//    ledge.body.immovable = true;
+    ledge = platforms.create(300,600, 'ground');
+    ledge.body.immovable = true;
 	
-//    ledge = platforms.create(0,0, 'ground');
-//    ledge.body.immovable = true;
+    ledge = platforms.create(0,0, 'ground');
+    ledge.body.immovable = true;
 	
-//    ledge2 = platforms2.create(150,100, 'ground');
-//    ledge.body.immovable = true;
+    ledge2 = platforms2.create(150,100, 'ground');
+    ledge.body.immovable = true;
 
     // The player and its settings
    //!! player = game.add.sprite(64, game.world.height - 150, 'dude');
-    player = game.add.sprite(500, 100, 'dude');
+   // player = game.add.sprite(500, 100, 'dude');
     game.physics.arcade.enable(player);
     player.animations.add('bottom', [0,1,2,3,4,5,6,7,8,9,10,11], 12, true, true);
    player.animations.add('bottom', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 12, true, true);
