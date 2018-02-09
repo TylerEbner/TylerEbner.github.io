@@ -36,6 +36,7 @@ var cursors;
 var stars;
 var score = 0;
 var scoreText;
+var author; 
 function create() {
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -107,7 +108,8 @@ function create() {
         star.body.bounce.y = 0.7 + Math.random() * 0.2;
     }
     //  The score
-    scoreText = game.add.text(25, 25, 'Killed: 0', { font: "50px Comic Sans", fill: '#cc0000' });
+    scoreText = game.add.text(25, 25, 'Killed: 0', { font: "50px", fill: '#cc0000' });
+    author = game.add.text(1000, 500, 'Author: Tyler Ebner', { font: "50px Courier", fill: '#333300' });
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
     
