@@ -107,7 +107,7 @@ function create() {
         star.body.bounce.y = 0.7 + Math.random() * 0.2;
     }
     //  The score
-    scoreText = game.add.text(100, 100, 'score: 0', { fontSize: '265px', fill: '#098234' });
+    scoreText = game.add.text(100, 100, 'Killed: 0', { font: '265px Comic Sans', fill: '#cc0000' });
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
     
@@ -166,7 +166,7 @@ function collectStar (player, star) {
     // Removes the star from the screen
     star.kill();
     //  Add and update the score
-    score += 5.75;
+    score += 1;
     scoreText.text = 'Killed: ' + score;
 }
 </script>
