@@ -87,7 +87,7 @@ function create() {
     game.physics.arcade.enable(player);
     //  Player physics properties. Give the little guy a slight bounce.
     player.body.bounce.y = 0.1;
-    player.body.gravity.y = 275;
+    player.body.gravity.y = 400;
     player.body.collideWorldBounds = true;
     //  Our two animations, walking left and right.
   //!!  player.animations.add('left', [11, 12, 13, 14, 15], 20, true);
@@ -107,7 +107,7 @@ function create() {
         star.body.bounce.y = 0.7 + Math.random() * 0.2;
     }
     //  The score
-    scoreText = game.add.text(100, 100, 'Killed: 0', { font: '265px Comic Sans', fill: '#cc0000' });
+    scoreText = game.add.text(25, 25, 'Killed: 0', { font: '50px Comic Sans', fill: '#cc0000' });
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
     
