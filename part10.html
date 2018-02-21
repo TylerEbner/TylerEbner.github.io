@@ -87,8 +87,8 @@ function create() {
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
     //  Player physics properties. Give the little guy a slight bounce.
-    player.body.bounce.y = 0.1;
-    player.body.gravity.y = 650;
+    player.body.bounce.y = 0.0;
+    player.body.gravity.y = 900;
     player.body.collideWorldBounds = true;
     //  Our two animations, walking left and right.
   //!!  player.animations.add('left', [11, 12, 13, 14, 15], 20, true);
