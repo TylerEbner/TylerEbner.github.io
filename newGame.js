@@ -34,7 +34,7 @@ game.scale.pageAlignVertically = true;
 this.score = 0;
 
 // set top score to local storage saved score, if any, or zero.
-this.topScore = localStorage.getItem("topboomdots") == null ? 0 : localStorage.getItem("topboomdots");
+this.topScore = localStorage.getItem("topboomdots") === null ? 0 : localStorage.getItem("topboomdots");
 
 // adding a text object which will display the score
 this.scoreText = game.add.text(10, 10, "-", {
